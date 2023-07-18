@@ -1,7 +1,7 @@
 import knex from 'knex';
 import knexPostgis from 'knex-postgis';
 
-// create knex driver for Neon's serverless driver
+// create Knex.js driver for Neon's serverless driver
 import neon from '@neondatabase/serverless'
 import KnexPg from 'knex/lib/dialects/postgres';
 class KnexNeon extends KnexPg {
@@ -17,7 +17,7 @@ export default async (req, ctx) => {
     connection: process.env.DATABASE_URL,
   });
 
-  // set up knex PostGIS extensions
+  // set up Knex.js PostGIS extensions
   const st = knexPostgis(db);
   db.postgisDefineExtras(knex => ({
     distanceOp: (geom1, geom2) => knex.raw('?? <-> ??', [geom1, geom2])
