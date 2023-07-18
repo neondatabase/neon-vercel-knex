@@ -1,0 +1,22 @@
+{
+  "name": "neon-vercel-knex",
+  "version": "0.1.0",
+  "author": "George MacKerron",
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild api-src/*.js --footer:js=\"export const config = { runtime: 'edge' };\" --external:crypto --external:fs --external:stream --outdir=api --bundle --format=esm --legal-comments=none --minify --line-limit=80"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.5.3",
+    "assert": "^2.0.0",
+    "esbuild": "^0.18.14",
+    "events": "^3.3.0",
+    "knex": "^2.5.1",
+    "knex-postgis": "^0.14.3",
+    "timers": "file:shims/timers",
+    "tty": "file:shims/tty",
+    "util": "file:shims/util",
+    "util.promisify": "^1.1.2"
+  }
+}
