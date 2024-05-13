@@ -43,6 +43,7 @@ npx vercel env pull .env.local  # now bring it down into ./.env.local for local 
  | psql $DATABASE_URL)
 
 # test ...
+cp .env.local .env
 npx vercel dev
 
 # ... and deploy
