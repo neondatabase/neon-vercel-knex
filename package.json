@@ -10,7 +10,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^0.5.3",
     "assert": "^2.0.0",
-    "esbuild": "^0.18.14",
+    "esbuild": "^0.25.0",
     "events": "^3.3.0",
     "knex": "^2.5.1",
     "knex-postgis": "^0.14.3",
